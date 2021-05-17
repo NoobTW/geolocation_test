@@ -6,7 +6,6 @@ button.onclick = getGPS;
  * for GeoLocation API: https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation_API
  */
 function getGPS() {
-	console.log('a');
 	if ("geolocation" in navigator) {
 		function success(position) {
 			// print in console. Press F12 on Browser and click "console".
