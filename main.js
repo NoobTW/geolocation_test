@@ -1,6 +1,8 @@
 let button = document.getElementById('button');
+let buttonWatch = document.getElementById('btnWatch');
 
 button.onclick = getGPS;
+buttonWatch.onclick = watchPosition;
 
 /*
  * for GeoLocation API: https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation_API
@@ -40,4 +42,20 @@ function sendGPS(lat, lng) {
 	}).then(res => res.json())
 		.catch(error => console.error('Error:', error))
 		.then(response => console.log('Success:', response));
+}
+
+function watchPosition() {
+	if ("geolocation" in navigator) {
+		function success(position) {
+			document.getElementById('location').innerText = position.coords.latitude + ', ' + position.coords.longitude;
+		}
+
+		function error() {
+			document.getElementById('location').innerText = 'ERROR';
+		}
+
+		navigator.geolocation.watchPosition(success, error);
+	} else {
+		alert('Geolocation is not available');
+	}
 }

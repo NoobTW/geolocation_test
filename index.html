@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8">
 	<title></title>
 </head>
@@ -11,7 +14,16 @@
 		請在瀏覽器按下 F12，在開發者工具終點擊 Console 以看到 log。
 	</div>
 
-	<button id="button">Get and Send GPS</button>
+	<div style="margin-top: 2rem">
+		<button id="button">Get and Send GPS</button>
+		<div>點選此按鈕後會取得一次位置並傳送到某個 Server</div>
+	</div>
+
+	<div style="margin-top: 2rem">
+		<button id="btnWatch">Watch Position</button>
+		<div>點選此按鈕會開始監聽位置，並即時顯示在網頁上</div>
+		<div>目前位置：<div id="location"></div></div>
+	</div>
 	<script src="./main.js"></script>
 </body>
 </html>
